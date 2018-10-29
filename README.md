@@ -1,9 +1,9 @@
 # Table of Content
-#### [CSS](#css)
-#### [React](#react)
-#### [NodeJs](#nodejs)
-#### [NPM Package](#npm-package)
-#### [Yarn](#yarn)
+- [CSS](#css)
+- [React](#react)
+- [NodeJs](#nodejs)
+- [NPM Package](#npm-package)
+- [Yarn](#yarn)
 
 ## CSS
 
