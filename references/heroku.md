@@ -1,0 +1,10 @@
+create-react-app heroku
+=======================
+create-react-app $APP_NAME
+cd $APP_NAME
+git init
+heroku create react-music-master --buildpack https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "Start with create-react-app"
+git push heroku master
+heroku open
