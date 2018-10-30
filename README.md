@@ -674,33 +674,33 @@ Replica Set
 
 ## Git & Github
 ### Git
-1.) `git init`
-2.) `git status`
-3.) `git add -A | git add .`
-4.) `git commit -m "Commit Message"`
-5.) `git push`
-6.) `git checkout -- .` <<< back to previous commit
-7.) `git pull origin master` <<< get the latest commit version of the repo
-8.) `git clone [repo .git]`
-9.) `git remote -v` <<< check current repo origin 
-10.) `git remote set-url origin [repo .git]` <<< set new origin for repo
-11.) `git push origin master`
-12.) `git log`
-13.) `git show <show last comment>`
-14.) `git reset <file_name>` <<< discard from latest git add
-15.) `git checkout -- <file_name>` <<< change the file content to last commit
-16.) `git mv <original_file_name> <new_file_name>`
-17.) `git rm <file_name_to_be_removed>`
-18.) `git diff `
-19.) `git merge <branch_name_that_merge_to_current_branch>` <<< fast-forward merge(when no conflict)
-20.) `git brand -d <branch_name>` <<< delete branch
-21.) `git mergetool`
-22.) `git tag <tag_name>`
-23.) `git tag --list`
-24.) `git stash`, then `git stash <stash_name>` <<< apply and drop last stash
-25.) `git version`
-26.) `git fetch || --all` <<< update branch from remove
-27.) `git pull` <<< update branch and update local file too
+1. `git init`
+2. `git status`
+3. `git add -A | git add .`
+4. `git commit -m "Commit Message"`
+5. `git push`
+6. `git checkout -- .` <<< back to previous commit
+7. `git pull origin master` <<< get the latest commit version of the repo
+8. `git clone [repo .git]`
+9. `git remote -v` <<< check current repo origin 
+10. `git remote set-url origin [repo .git]` <<< set new origin for repo
+11. `git push origin master`
+12. `git log`
+13. `git show <show last comment>`
+14. `git reset <file_name>` <<< discard from latest git add
+15. `git checkout -- <file_name>` <<< change the file content to last commit
+16. `git mv <original_file_name> <new_file_name>`
+17. `git rm <file_name_to_be_removed>`
+18. `git diff `
+19. `git merge <branch_name_that_merge_to_current_branch>` <<< fast-forward merge(when no conflict)
+20. `git brand -d <branch_name>` <<< delete branch
+21. `git mergetool`
+22. `git tag <tag_name>`
+23. `git tag --list`
+24. `git stash`, then `git stash <stash_name>` <<< apply and drop last stash
+25. `git version`
+26. `git fetch || --all` <<< update branch from remove
+27. `git pull` <<< update branch and update local file too
 
 ```bash
 git config --global user.name "Name"
@@ -709,13 +709,13 @@ git config --global user.email "youremail@address.com"
 ^^^ setup git info to let it know who is commit the repo
 
 ### Git Branch
-> `git branch || -a` <<< list all the branches for the repo, the repo with * is the current working repo
-> `git branch [branch name]` <<< create new branch
-> `git checkout [branch name]` <<< switch to branch, after git commit, you can freely switch between branch to modify it
-> `git checkout [master branch name]` > `git merge [branch to merge with master]` <<< merge branch with master
-> `git push origin [branch name]`
-> `git branch -d [branch name]` <<< delete repo branch
-> `git checkout -b [branch name]` <<< create branch and switch over it
+- `git branch || -a` <<< list all the branches for the repo, the repo with * is the current working repo
+- `git branch [branch name]` <<< create new branch
+- `git checkout [branch name]` <<< switch to branch, after git commit, you can freely switch between branch to modify it
+- `git checkout [master branch name]` > `git merge [branch to merge with master]` <<< merge branch with master
+- `git push origin [branch name]`
+- `git branch -d [branch name]` <<< delete repo branch
+- `git checkout -b [branch name]` <<< create branch and switch over it
 
 ### GitHub Issues
 1. Create issue in github
