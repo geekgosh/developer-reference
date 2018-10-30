@@ -1,15 +1,44 @@
 # Table of Content
 - [References Tools](#references--tools)
+- [Performance](#performance)
+- [Security](#security)
 - [CSS](#css)
 - [React](#react)
 - [NodeJs](#nodejs)
 - [NPM Packages](#npm-packages)
 - [Yarn](#yarn)
 - [SQL](#sql)
+- [#Docker](#docker)
+- [Things To Expore](#things-to-explore)
 
 ## References & Tools
 1. coverr.co <<< Great animation video for background
 2. sizzy <<< Test website in various devices
+3. OWASP <<< IT Security Information
+4. PageSpeed Insights & WebPageTest <<< Test page speed
+
+## Performance
+1. HTML, CSS and JS minifier
+2. Image compresser (resize, and reduce quality)
+3. Image remove meta - verexif
+4. Web page speed - PageSpeed Insights & WebPageTest
+5. Code Splitting - React check example (so cool), got route and component based code splitting
+6. Favicon generator
+7. Use CDN e.g. Cloudflare, Amazon CloudFront & Azure Content Delivery Network
+8. Use gzip compression for files
+9. Caching - cache the file by service worker and max age
+10. Load balancing - use nginx and test by using "loadtest"
+
+## Security
+1. Free HTTPS - Let's Encrypt
+2. CDN - Cloudflare
+3. NPM package named "nsp" and "snyk" - good for checking npm package security
+4. Logging package named "morgan" and "winston"
+5. Https everywhere - sanitize input, no eval(), no document.write(), content security policy, secure + HTTPOnly Cookies
+6. Code Secret - Environment variable, commit history
+7. Secure Headers - npm package "helmet"
+8. Access Control (Give least privilege) - npm package "cors"
+9. Data Management - bcrypt, scrypt, Aragon2 & pgcrypto
 
 ## CSS
 ### Guidelines
@@ -26,11 +55,33 @@
 
 
 ## NodeJs
+### Template
+1. Pug <<< previously known as Jade
+2. Mustache
+3. EJS
 
 ## NPM Packages
 
 |    Package    |     Usage     |
 |:--------------|:-------------:|
+|react||
+|react-dom||
+|enzyme|testing framework|
+|redux|State management|
+|react-redux|State management for react|
+|redux-logger||
+|redux-thunk||
+|redux-promise||
+|react-router-config||
+|materialize-css|material design css library|
+|react-stripe-checkout|credit card payment|
+|prettier|make code prettier in precommit|
+|react-helmet|add HTML tag|
+|node-fetch|Http Client|
+|isomorphic-fetch|Http Client|
+|axios|Http Client|
+|concurrently||
+|dotenv||
 |webpack||
 |webpack-cli||
 |babel-loader|teach babel how to work with webpack|
@@ -46,9 +97,35 @@
 |autoprefixer||
 |postcss-cli||
 |node-sass|compile sass code|
+|express||
+|faker|generate dummy data|
+|multer||
 |pm2|multiple cluster for process|
+|body-parser||
+|jest|testing framework|
+|passport|authenticate user|
+|passport-local||
+|morgan|logging package|
+|winston|logging package|
+|serialize-javascript|serialize javascript to prevent injection|
+|express-http-proxy||
+|redis|cache server|
+|jsonwebtoken|token based authentication|
+|cookie-session|cookie based authentication|
+|stripe|credit card payment|
+|sendgrid|mailer|
+|localtunnel|web to localhost|
+|helmet|secure HTTP headers|
+|cors|access-control|
+|bcrypt|data management|
+|bcrypt-nodejs|data management|
+|scrypt|data management|
+|aragon2|data management|
+|pgcrypto|data management|
+|synk|check npm package security|
 |live-server|allow auto-reload|
-|npm-run-all|run multiple npm script at once|
+|npm-run-all|run multiple npm scripts at once|
+|nodemon||
 
 ## Yarn
 1. `yarn init` === `npm init`
@@ -151,3 +228,54 @@ CREATE TRIGGER <trigger_name>
     ...
     END;
 ```
+
+## Docker
+### CheatSheet
+- docker run <image_name> - (create and start the image into container)
+- docker ps - (list all the current container)
+- docker ps --all - (list all created container)
+- docker system prune - (delete all container)
+- docker logs <container_id> - (retrieve logs of the container)
+- docker stop <container_id> - (stop the container)
+- docker kill <container_id> - (direct stop the container)
+- docker exec -it <container_id> <new_image_name> - (add new functionality into particular container)
+- docker exec -it <container_id> sh - (enter the shell command)
+- docker build -f <custom_docker_filename> . >>> build docker with custom filename
+- docker run -p 3000:3000 -v $(pwd):/app <image_id> >>> reference file (pwd only work in git bash)
+- docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id> >>> reference file but exclude node_modules (pwd only work in git bash)
+- docker run <image_id> <command> - e.g. docker run xxxx npm run test
+
+### Create custom docker image
+1. Create file named "Dockerfile", and put configuration inside
+2. docker build .
+2. docker build -t <your_docker_id>/<container_name>:<version> . - (with custom image tags)
+3. docker run <container_id>
+
+#### docker run with port mapping incoming port:port inside container
+- docker run -p 8080:8080 <image_id>
+- docker run -it <image_id> sh - (go into shell)
+
+### Docker readme
+1. docker wil remember the order in docker file and cache if it is the same, so don't move the order if can
+
+### Docker compose
+- docker-compose ps >>> list all docker compose
+- docker-compose up >>> docker run <image>
+- docker-compose up -d >>> run in background
+- docker-compose up --build >> docker build. && docker run <image>
+
+## Things to Explore
+1. WebGL
+2. Speech API & Speech Synthesis API
+3. Web animation - element.animate
+4. Web Push Notifications
+5. Broadcast Channel API
+6. Payment Request API
+7. Web Share API
+8. Sensor API
+9. CSS Typed Object Model
+10. Web Authentication API - WebAuthn
+11. Payment Handler API
+12. AR and VR on the web
+13. CSS Scroll Snap
+14. Page Lifecycle API
