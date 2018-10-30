@@ -63,6 +63,123 @@
 - Prefixing
 - Compressing
 
+### Advanced CSS Synxtax
+1. `clip path` <<< crop element for styling
+
+2. `backface-visibility` <<< when flipped 180deg not show front element anymore
+
+3. `background-blend-mode` <<< Allow background image to mix, e.g.
+```css
+background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+```
+
+4. Background clip, background image will displayed as text
+```css
+background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+-webkit-background-clip: text;
+color: transparent;
+```
+
+5. `animation-fill-mode: backwards;` <<< even animation is delay, the element stand by with 0% settings like opacity: 0;
+
+6. `outline and outline offset` <<< similiar with border
+
+7. Image Nice Fit
+```css
+object-fit: cover;
+height: 100%;
+width: 100%;
+```
+
+// radius, x, y
+8. `shape-outside: circle(50% at 50% 50%);`
+<<< must use together with `float`(if not mistaken),
+combine with `clip-path: circle(50% at 50% 50%);`
+
+9. Dynamic style appearance when input is invalid
+```css
+input:focus:invalid {
+	border-bottom: red;
+}
+```
+
+10. Dynamic hide/show label based on placeholder
+```css
+input:placeholder-shown + label {
+	opacity: 0;
+	visibility: hidden;
+}
+```
+
+11. `transform-origin: right;` <<< right side fixed, not moved and transform the way as settings
+
+12.
+Parent element `display: table;`
+Two child elements `display: table-cell;`
+Child elements will have same height and display inline like `float: left`;
+
+13. For responsive image
+Art Direction and Density Switching
+```html
+<picture class="footer__logo">
+    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo" src="img/logo-green-2x.png">
+</picture>
+```
+
+Density and Resolution Switching
+```html
+<img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" alt="Photo 1" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" class="composition__photo composition__photo--p1">
+```
+
+14. Background blur
+`backdrop-filter: blur(10px);`
+^^^ This currently work only in Safari
+```css
+@supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background-color: rgba($color-black, .3);
+}
+```
+
+15. Text Selected Style
+```css
+::selection {
+	background-color: $color-primary;
+	color: $color-white;
+}
+```
+
+16. When hover is not supported
+`@include only screen and (hover: none)`
+
+17. Change color of SVG
+`fill: #666;`
+
+18. Dynamic follow this element or its parent color
+`fill: currentColor;`
+
+19. Flex element to margin right side dynamically
+```css
+parent {
+	display: flex;
+}
+
+element {
+	margin-right: auto;
+}
+```
+
+20. Mask, svg/element mask behind things/color
+```css
+element::before {
+	background-color: var(--color-primary);
+	-webkit-mask-image: url(../img/svg/chevron-thin-right.svg);
+	-webkit-mask-size: cover;
+}
+```
+
 ## React
 ### Lifecycle in Order
 In Order
@@ -432,10 +549,7 @@ cons: object id can get timestamps (db.<collection>.find()[0]._id.getTimestamp()
 - `db.<collection>.count();`
 - `db.<collection>.sort();`
 
-
-
-Example
-=======
+### Example
 - `db.<collection>.find({"name.firstname": "Sunil"});`
 - `db.<collection>.find({"age": {$eq: 21}});`
 - `db.<collection>.find({"age": {$lt: 21}});`
@@ -463,12 +577,10 @@ Example
 - `db.<collection>.find({empName:{$regex:"sunil"}});`
 - `db.<collection>.find({empName:/Sunil/});`
 
-Doubt
-=====
+### Doubt
 1. The way how mongodb sort data in natural, first based on insertion, second based on update, latest update put into last
 
-Real Example
-============
+### Real Example
 Assume below data, to get their total for both a and b for each name
 { Name: 'X', Prod: { 'a': 25, b: '75' } }
 { Name: 'Y', Prod: { 'a': 33, b: '66' } }
@@ -476,8 +588,7 @@ To solve this, we need both group by and reduce function
 Answer:
 db.<collection>.group({key:{'Name':1},reduce:function(curr,result){result.total+=curr.Prod.a+curr.Prod.b;},initial:{total:0}});
 
-Others
-======
+### Others
 1. Map-Reduce
 ```js
 db.<collection>.mapReduce(
@@ -503,8 +614,7 @@ Because it pre-allocates the data files to avoid the file system fragmentation
 10. Maximum 50 replica set (7 voting member, 34 non voting)
 members[n].priority = 1;
 
-Key Feature
-===========
+### Key Feature
 1. NoSQL
 2. Faster than RDBMS
 3. Agile
@@ -518,14 +628,12 @@ Replica Set
 > `rs.status();` - show replicate set status
 > `rs.initiate();` - initiate the replica set
 
-1 PRIMARY NODE and 2 REPLICA NODE
-=================================
+### 1 PRIMARY NODE and 2 REPLICA NODE
 - Set port for each mongodb, use `--port <port>` when start the instance
 - `mongod --replSet <replicat_set_name> --dbpath <database_directory_path` <<< different path for each>
 - `db.hostInfo();` < to get the hostName
 
-In primary node
----------------
+### In primary node
 - `rs.initiate();`
 - `rs.add(<host_name>)` - add other node to the replica set
 
