@@ -22,7 +22,7 @@
 6. [HTML5 & CSS3 Compatibility Checker](http://caniuse.com/)
 7. [CSS Selectors](https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
 8. [CSS Tricks](https://css-tricks.com/)
-9. [<hr /> style](https://css-tricks.com/examples/hrs/)
+9. [hr style](https://css-tricks.com/examples/hrs/)
 10. [jQUery in Javascript](http://youmightnotneedjquery.com/)
 11. [Color Gradients Sample](https://uigradients.com/)
 12. [CSS autoprefixer](https://autoprefixer.github.io/)
