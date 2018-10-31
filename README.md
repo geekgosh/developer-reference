@@ -181,66 +181,9 @@ element::before {
 ```
 
 ## React
-### Lifecycle in Order
-In Order
---------
-1. Mounting - Run during first time rendering
-
-
-  i.) `componentWillMount()` <<< execute only once
- ii.) `render()` <<< ReactDOM.render() will execute this
-iii.) `componentDidMount()` <<< take place(preferred) to make AJAX call, Web API, Javascript Framework, setInterval, setTimeout
-
-2. Updating - A component updates every time that it renders, starting with the second render
-
-  i.) componentWillReceiveProps <<< get called only if receive props
- ```js
-  componentWillReceiveProps: function(nextProps) {
-    if (nextProps.number > this.state.highest) {
-      this.setState({
-        highest: nextProps.number
-      })
-    }   
-  }
-```
-
- ii.) shouldComponentUpdate <<< after componentWillReceiveProps & rendering
-       
-    ```js
-    return true || false;
-	True = proceed as usual
-	False = component will not update, methods after would not execute(incl rendering)
-	Argument(nextProps, nextState)
-    ```
-
-iii.) componentWillUpdate
-
-      ```js
-      Argument(nextProps, nextState)
-      Possible usage: checking window size, interacting with an API
-      ```
- 
-iv.) render
-
-  v.) componentDidUpdate
-      
-    ```js  
-    Argument(prevProps, prevState)
-    Possible usage: browser, API
-
-	if (this.state.latestClick < prevState.latestClick) {
-  		this.endGame();
-	}
-    ```
-
-3. Unmounting
-i.) componentWillUnmount
-
-```js
-Argument(prevProps, prevState)
-This could happen if the DOM is rerendered without the component, 
-or if the user navigates to a different website or closes their web browser.
-```
+### Animation
+- [React Transition Group](https://reactcommunity.org/react-transition-group/)
+- [React Motion](https://github.com/chenglou/react-motion)
 
 ### Tips
 Tips
