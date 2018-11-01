@@ -354,7 +354,7 @@ Done :)
 |aragon2|data management|
 |pgcrypto|data management|
 |socket.io|web socket|
-|synk|check npm package security|
+|snyk|check npm package security|
 |live-server|allow auto-reload|
 |npm-run-all|run multiple npm scripts at once|
 |nodemon||
