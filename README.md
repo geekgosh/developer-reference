@@ -28,6 +28,7 @@
 12. [CSS autoprefixer](https://autoprefixer.github.io/)
 13. ColorZilla - Google Chrome Plugin
 14. Postman <<< API Tester
+15. Wappalyzer - Google Chrome Plugin
 
 ## Performance
 1. HTML, CSS and JS minifier
